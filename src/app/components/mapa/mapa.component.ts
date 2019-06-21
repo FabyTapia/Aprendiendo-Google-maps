@@ -18,8 +18,9 @@ export class MapaComponent implements OnInit {
   constructor() { 
 
 
-const  nuevoMarcador = new Marcador ( -33.419012, -70.641702 )
-    this.marcadores.push(nuevoMarcador);
+if (localStorage.getItem('marcadores') ){
+  this.marcadores = JSON.parse(localStorage.getItem('marcadores'));
+}
   }
 
   ngOnInit() {
@@ -34,6 +35,13 @@ const  nuevoMarcador = new Marcador ( -33.419012, -70.641702 )
 
     this.guardarStorage();
 
+  }
+
+  borrarMarcador(i:number){
+    //splice sirve para borrar elemento de un arreglo 
+    this.marcadores.splice(i,1);
+    this.guardarStorage();
+  
   }
   guardarStorage(){
     // JSON.strinify convierte this.marcadores en string
