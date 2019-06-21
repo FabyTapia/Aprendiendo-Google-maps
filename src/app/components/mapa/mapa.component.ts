@@ -25,12 +25,19 @@ const  nuevoMarcador = new Marcador ( -33.419012, -70.641702 )
   ngOnInit() {
   }
   agregarMarcador(evento){
-
+                      //controlar info 
     const coords: {lat: number, lng:number} = evento.coords;
 
     const nuevoMarcador = new Marcador( coords.lat, coords.lng);
     
     this.marcadores.push( nuevoMarcador);
-    console.log(evento);
+
+    this.guardarStorage();
+
+  }
+  guardarStorage(){
+    // JSON.strinify convierte this.marcadores en string
+    localStorage.setItem('marcadores',JSON.stringify(this.marcadores));
+
   }
 }
