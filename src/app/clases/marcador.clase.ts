@@ -1,12 +1,8 @@
 
-export class Marcador  {
+export class Coordinate {
 
     public lat: number;
     public lng: number;
-
-    //propiedades
-    public title =  'Sin Title';
-    public desc = 'Sin Desc'
 
     
     constructor( lat:number,  lng: number){

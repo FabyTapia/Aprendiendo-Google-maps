@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Marcador } from '../../clases/marcador.clase';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { Coordinate } from '../../clases/marcador.clase';
 import { MapsService } from '../servicios/maps.service';
 
 @Component({
@@ -11,45 +10,31 @@ import { MapsService } from '../servicios/maps.service';
 export class MapaComponent implements OnInit {
 
   //arreglo de marcadores vacio
-  maps:[] =[];
-  marcadores: Marcador[] = [];
+  coffeShop:any[] =[];
+  
 
-  lat = 19.4978;
-  lng = -99.1269;
+  lat =  -33.419012;
+  lng =  -70.641702;
 
-  constructor(public snackBar: MatSnackBar,
-            private _MapsService:MapsService) { 
+  constructor(
+            private _mapsService:MapsService){
 
+            } 
 
-if (localStorage.getItem('marcadores') ){
-  this.marcadores = JSON.parse(localStorage.getItem('marcadores'));
-}
-  }
 
   ngOnInit() {
+    for (let coffeShop of this.coffeShop){
+      this.coffeShop.push(new coffeShop(coffeShop.lat, coffeShop.lng));
+    }
+    this.coffeShop = this._mapsService.getcoffeShop();
+    console.log(this.coffeShop)
   }
-  agregarMarcador(evento){
-                      //controlar info 
-    const coords: {lat: number, lng:number} = evento.coords;
-
-    const nuevoMarcador = new Marcador( coords.lat, coords.lng);
-    
-    this.marcadores.push( nuevoMarcador);
-
-    this.guardarStorage();
-this.snackBar.open('Marcador agregado', 'Cerrar',{duration:3000});
-  }
-
-  borrarMarcador(i:number){
-    //splice sirve para borrar elemento de un arreglo 
-    this.marcadores.splice(i,1);
-    this.guardarStorage();
-    this.snackBar.open('Marcador borrado', 'Cerrar',{duration:3000});
+  
   
   }
-  guardarStorage(){
-    // JSON.strinify convierte this.marcadores en string
-    localStorage.setItem('marcadores',JSON.stringify(this.marcadores));
+  
+  
+  
+  
 
-  }
-}
+  
