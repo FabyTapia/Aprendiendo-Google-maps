@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Marcador } from '../../clases/marcador.clase';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { MapsService } from '../servicios/maps.service';
 
 @Component({
   selector: 'app-mapa',
@@ -10,12 +11,14 @@ import { Marcador } from '../../clases/marcador.clase';
 export class MapaComponent implements OnInit {
 
   //arreglo de marcadores vacio
+  maps:[] =[];
   marcadores: Marcador[] = [];
 
-  lat =  -33.419012;
-  lng =  -70.641702;
+  lat = 19.4978;
+  lng = -99.1269;
 
-  constructor() { 
+  constructor(public snackBar: MatSnackBar,
+            private _MapsService:MapsService) { 
 
 
 if (localStorage.getItem('marcadores') ){
@@ -34,13 +37,14 @@ if (localStorage.getItem('marcadores') ){
     this.marcadores.push( nuevoMarcador);
 
     this.guardarStorage();
-
+this.snackBar.open('Marcador agregado', 'Cerrar',{duration:3000});
   }
 
   borrarMarcador(i:number){
     //splice sirve para borrar elemento de un arreglo 
     this.marcadores.splice(i,1);
     this.guardarStorage();
+    this.snackBar.open('Marcador borrado', 'Cerrar',{duration:3000});
   
   }
   guardarStorage(){
