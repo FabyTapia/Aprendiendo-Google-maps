@@ -27,6 +27,8 @@ export class MapaComponent implements OnInit {
     console.log(this.locationCoffeShop)
 }
 deleteMarker(i: number){
+  this.locationCoffeShop.splice(i,1);//splice elimina un elemento de un arreglo
   console.log(i);
+
 }
 }
