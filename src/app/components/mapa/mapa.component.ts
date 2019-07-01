@@ -26,5 +26,7 @@ export class MapaComponent implements OnInit {
     this.locationCoffeShop = this._mapservice.getlocationCoffeShop();
     console.log(this.locationCoffeShop)
 }
-
+deleteMarker(i: number){
+  console.log(i);
+}
 }

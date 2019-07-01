@@ -12,7 +12,7 @@
                     <p>{{m.address}}</p>
 
                     <div>
-                        <button mat-raised-button color="accent">Borrar</button>
+                        <button (click)="deleteMarker(i)" color="accent">Borrar</button>
                         <button mat-raised-button color="primary">Agregar a Favoritos</button>
                     </div>
                 </agm-info-window>
