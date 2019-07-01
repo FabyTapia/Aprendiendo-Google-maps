@@ -10,9 +10,9 @@ export class MapsService {
 
 {
       name:"Wonderland Cafe",
-      address: "El Rosal 361",
-      lat: -33.4059593,
-      lng: -71.1272736
+      address: " ROSAL 361 BARRIO LASTARRIA, SANTIAGO ",
+      lat:  -33.438194,
+      lng: -70.642138
 
   },
   
@@ -42,9 +42,9 @@ export class MapsService {
   
   {
       name:"Original Green Roasters",
-      address: "Avenida Rancagua 040",  
-      lat: -34.170249,
-      lng: -70.7407427
+      address: " Rancagua 040, Providencia, Región Metropolitana",  
+      lat: -33.4415355,
+      lng: -70.633078
   },
   
   {
@@ -63,9 +63,9 @@ export class MapsService {
   
   {
       name:"Habia Una Vez",
-      address: "Antonio Lopez de Bello 323",
-      lat: -33.45694,
-      lng: -70.64827
+      address: " Antonia López de Bello 307, Recoleta, Región Metropolitana",
+      lat: -33.431379,
+      lng:  -70.6319897
   },
   
   {
