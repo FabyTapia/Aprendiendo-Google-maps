@@ -9,8 +9,7 @@ import { Coordinate } from '../../clases/marcador.clase';
 })
 export class MapaComponent implements OnInit {
 
-  //arreglo de marcadores vacio
-  
+  //star position
   lat =  -33.419012;
   lng =  -70.641702;
 
@@ -26,15 +25,6 @@ export class MapaComponent implements OnInit {
     
     this.locationCoffeShop = this._mapservice.getlocationCoffeShop();
     console.log(this.locationCoffeShop)
-    // this._locationCoffeShop.getcoffeShop().subscribe(res =>{
-      // for(let locationCoffeShop in res.coffeShop){
-        //this.locationCoffeShop.push({
-          //lat: parseInt(res[locationCoffeShop].lat),
-          //lng: parseInt(res[locationCoffeShop].lng)
-       // })
-      //}
-   // })
-  //}
 }
 
 }

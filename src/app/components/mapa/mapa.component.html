@@ -2,14 +2,17 @@
     <mat-card-title>MAPA</mat-card-title>
 
     <mat-card-content>
-        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15" (mapClick)="mapCliked($event)" locationCoffeShop>
 
-            <agm-marker *ngFor="let m of locationCoffeShop; let i = index" [latitude]="m.lat" [longitude]="m.lng">
+            <agm-marker *ngFor="let m of locationCoffeShop; let i = index" (markerClick)="clickedMarker(m,i)" [latitude]="m.lat" [longitude]="m.lng">
+
+                <agm-info-window>
+                    <p>{{m.name}}</p>
+                    <Strong>{{m.address}}</Strong>
+                </agm-info-window>
+
+
             </agm-marker>
-            <agm-info-window>
-                <!-- <p><strong>{{m.name}}</strong></p> -->
-
-            </agm-info-window>
         </agm-map>
 
 

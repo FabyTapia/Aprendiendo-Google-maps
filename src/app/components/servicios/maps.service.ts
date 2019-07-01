@@ -101,3 +101,10 @@ getlocationCoffeShop(){
 }
 
 
+//type info service
+interface locationCoffeShop{
+    name?:string;
+    address?:string;
+    lat: number;
+    lng: number;
+  }
