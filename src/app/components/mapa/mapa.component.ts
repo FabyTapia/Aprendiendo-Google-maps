@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MapsService } from '../servicios/maps.service';
-import { Coordinate } from '../../clases/marcador.clase';
+
 
 @Component({
   selector: 'app-mapa',
